@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+
+@layer base {
+  body {
+    @apply bg-zinc-950 text-zinc-100 antialiased;
+    font-family: "Inter", system-ui, sans-serif;
+    margin: 0;
+  }
+  #root {
+    width: 100%;
+    min-height: 100vh;
+    text-align: left;
+  }
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { @apply bg-zinc-900; }
+  ::-webkit-scrollbar-thumb { @apply bg-zinc-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-brand-600; }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-zinc-900/60 backdrop-blur-sm border border-zinc-800/50 rounded-xl;
+  }
+  .sidebar-item {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium
+           text-zinc-400 hover:text-zinc-100 hover:bg-zinc-800/60 transition-all duration-150 cursor-pointer;
+  }
+  .sidebar-item-active {
+    @apply text-brand-400 bg-brand-950/40 hover:bg-brand-950/50 hover:text-brand-400;
+  }
+}
